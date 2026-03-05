@@ -14,189 +14,144 @@
     <title>Mantis Girl</title>
 
     <style>
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            min-height: 100svh;
-            display: flex;
-            flex-direction: column;
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            min-height:100svh;
+            display:flex;
+            flex-direction:column;
         }
 
-        header {
+        header{
             display: flex;
             justify-content: center;
             align-items: center;
             background: #1f1f1f;
-            padding: 12px 0;
-            height: 8vh;
-            min-height: 50px;
+            padding: 20px 0;
         }
 
-        .logo {
-            height: 90%;
-            min-height: 50px;
+        .logo{
+            height: clamp(40px, 6vh, 90px);
             width: auto;
-        
-        }
-        .header {
-            font-size: 2rem;
-            width: 30%;
-            min-height: 20%;
-            text-align: center;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-            color: #F1EDF5;
-            font-family: 'saira';
         }
 
-        main {
-            padding: 24px;
-            flex: 1;
-            background-color: #171717; 
-            background-image: url("images/Background1.gif");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            min-height: 500px;
-            min-width: 1000px;
-            
+        main{
+            flex:1;
+            padding:40px 20px;
+            background-color:#171717;
+            background-image:url("images/Background1.gif");
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:contain;
 
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            flex-direction: column;
-        }
-        
-        .main-content {
-            max-width: 1200px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px; 
-            min-height: 100%;
-        }
-        .book-blocks {
-            min-width: 30%;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            gap: 40px;     
-            justify-content: center;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
         }
 
-        .book-block {
-            min-width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex: 1 1 300px; 
-            max-width: 500px;
-            max-height: 60%;
-        
+        .header{
+            font-family:'Saira';
+            color:#F1EDF5;
+            text-align:center;
+
+            max-width:800px;
+            width:90%;
+
+            font-size:clamp(1.4rem,2.4vw,2.2rem);
+            margin-bottom:50px;
+
+            text-shadow:2px 2px 6px rgba(0,0,0,0.8);
         }
 
-        .book-cover {
-            width: 35%;
-            min-width: 250px;
-            height: 90%;
-            min-height: 300px;
-            max-height: 400px;
-            margin-right: 2vw;
+        .book-blocks{
+            width:90%;
+            max-width:900px;
+
+            display:flex;
+            flex-direction:column;
+            gap:40px;
         }
 
-        .book-desc {
-
+        .book-block{
+            display:flex;
+            gap:25px;
+            align-items:flex-start;
         }
 
-        .book-block h2 {
-            font-family: 'saira';
-            font-weight: 1500;
-            color: #F1EDF5;
-            margin-top: 0;
-            margin-bottom: 1px;
-            font-size: 2rem;
-        }
-        .book-block h3 {
-            font-family: 'saira';
-            font-weight: 1500;
-            color: #F1EDF5;
-            margin-top: 0;
-            margin-bottom: 1px;
-            font-size: 1rem;
+        .book-cover{
+            width:250px;
+            height:auto;
         }
 
-        .book-block p {
-            font-family: 'saira';
-            color: #F1EDF5;
-            margin-bottom: 0;
-            font-size: 1.2rem;
-            line-height: 1.5;
-            font-weight: 500;
+        .book-desc{
+            flex:1;
         }
 
-        .buy-button {
-            display: inline-block;     
-            margin-top: 15px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            background-color: rgba(160,67,167,0.8);
-            color: #F1EDF5;
-            text-decoration: none;          
-            font-family: 'Saira', Arial, sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+        .book-desc h2{
+            font-family:'Saira';
+            color:#F1EDF5;
+            margin:0;
+            font-size:clamp(1.5rem,2vw,2rem);
         }
 
-        .buy-button:hover {
-            background-color: rgba(180,87,187,0.9);
-            transform: scale(1.05);
+        .book-desc h3{
+            font-family:'Saira';
+            color:#F1EDF5;
+            margin:0;
+            font-size:clamp(1rem,1.5vw,1.2rem);
         }
 
-        
-        @media (max-width: 1200px) {
-            .header {
-                width: 60%;
-                font-size: 1.7rem;
+        .book-desc p{
+            font-family:'Saira';
+            color:#F1EDF5;
+            line-height:1.5;
+            font-size:clamp(.95rem,1.2vw,1.1rem);
+            margin-bottom:15px;
+        }
+
+        .buy-button{
+            background:rgba(160,67,167,0.8);
+            color:white;
+            border:none;
+            margin-top: 20px;
+            padding:10px 20px;
+            font-family:'Saira';
+            font-weight: bold;
+            font-size:0.95rem;
+            border-radius:6px;
+            cursor:pointer;
+            transition:0.25s;
+            text-decoration: none;
+        }
+        .buy-button:hover{
+            background:rgba(186,95,196,0.9);
+        }
+
+        /* TABLET */
+        @media (max-width:900px){
+            .book-block{
+                flex-direction:column;
+                align-items:center;
+                text-align:center;
             }
-            .book-blocks {
-                width: 70%;
-            }
-            .book-block {
-                max-width: 100%;
-            }
-            .book-block h2 {
-                font-size: 1.6rem;
-            }
-            .book-block h3 {
-                font-size: 1.1rem;
-            }
-            .book-block p {
-                font-size: 1rem;
-            }
-            .buy-button {
-                font-size: 0.9rem;
-                padding: 8px 16px;
+            .book-cover{
+                width:200px;
             }
         }
 
-        @media (max-width: 768px) {
-          .header {
-            width: 90%;
-            font-size: 1.5rem;
-          }
-          .book-block {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-          }
-          .book-cover {
-            width: 60%;
-            margin-right: 0;
-            margin-bottom: 15px;
-          }
-    }
+        /* MOBILE */
+        @media (max-width:500px){
+            .header{
+                margin-bottom:35px;
+            }
+            .book-cover{
+                width:170px;
+            }
+            .buy-button{
+                width:100%;
+            }
+        }
+
     </style>
 
 </head>
